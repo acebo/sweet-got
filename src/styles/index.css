@@ -1,0 +1,40 @@
+@font-face {
+  font-family: Gaegu;
+  src: url("./../assets/fonts/Gaegu/Gaegu-Regular.ttf");
+}
+
+@font-face {
+  font-family: Gaegu;
+  src: url("./../assets/fonts/Gaegu/Gaegu-Bold.ttf");
+  font-weight: bold;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Gaegu', serif;
+  color: #FFF;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Not responsive :D Fixed size (iPhone 6 plus) */
+  --screen-width: 414px;
+  --screen-height: 736px;
+  --filter-bar-height: 52px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+#root {
+  position: relative;
+  width: var(--screen-width);
+  height: var(--screen-height);
+  margin: 0 auto;
+}

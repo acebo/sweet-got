@@ -1,0 +1,183 @@
+.App {
+  text-align: center;
+}
+
+h2 {
+  font-family: "Gaegu", cursive;
+  font-size: 1.6em;
+  font-weight: normal;
+}
+
+/* ---- Card List ---- */
+
+#card-list-container {
+  height: calc( var(--screen-height) - var(--filter-bar-height) );
+  overflow: scroll;
+  overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
+  background: pink;
+}
+
+#card-list {
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+}
+
+#card-list li {
+  width: calc( var(--screen-width) + 250px );
+  float: left;
+  background: linear-gradient(to right, rgb(221, 94, 137), rgb(247, 187, 151));
+  padding: 1em;
+  transition: .5s;
+  -webkit-transition: .5s;
+  transform: translateZ(0) translateX(-200px);
+  -webkit-transform: translateZ(0) translateX(-200px);
+}
+
+#card-list li.open-menu {
+  transform: translateZ(0) translateX(0);
+  -webkit-transform: translateZ(0) translateX(0);
+}
+
+#card-list li > .card-menu {
+  float: left;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+#card-list li > .card-menu .delete-button {
+  width: 100px;
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+#card-list li > .card-item {
+  width: var(--screen-width);
+  float: left;
+}
+
+#card-list li .profile-image {
+  float: left;
+  width: 30%;
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0px 1px 10px 1px #353535;
+}
+
+#card-list li .profile-image img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#card-list li .profile-detail {
+  float: left;
+  width: 65%
+}
+
+/* ---- Filter List ---- */
+
+#filter-list {
+  height: 52px;
+  width: var(--screen-width);
+}
+
+#filter-list ul {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  list-style: none;
+}
+
+#filter-list ul li {
+  height: 68px;
+  width: 100%;
+  position: absolute;
+  transform: translateZ(0) translateY(0);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  color: #483c3c;
+  font-weight: bold;
+  will-change: transform, height, z-index;
+  z-index: 5;
+}
+
+#filter-list.open-menu li {
+  height: calc( var(--screen-height) / 4 );
+}
+
+#filter-list li img {
+  width: 40%;
+  margin: 0 auto;
+}
+
+#filter-list li:nth-child(1) {
+  background: #FFD2D6;
+  transition: transform 200ms cubic-bezier(0.17, 0.04, 0.03, 0.94) 150ms,
+  height 50ms linear 150ms;
+}
+
+#filter-list li:nth-child(2) {
+  background: #DCEDF5;
+  transition: transform 400ms cubic-bezier(0.17, 0.04, 0.03, 0.94) 100ms,
+      height 50ms linear 150ms;
+}
+
+#filter-list li:nth-child(3) {
+  background: #EAD9F4;
+  transition: transform 500ms cubic-bezier(0.17, 0.04, 0.03, 0.94) 150ms,
+  height 50ms linear 150ms;
+}
+
+#filter-list li:nth-child(4) {
+  background: #D1EEEA;
+  transition: transform 600ms cubic-bezier(0.17, 0.04, 0.03, 0.94) 200ms,
+  height 50ms linear 200ms;
+}
+
+#filter-list.open-menu li:nth-child(1) {
+  transform: translateZ(0) translateY(0);
+}
+
+#filter-list.open-menu li:nth-child(2) {
+  transform: translateZ(0) translateY(calc( var(--screen-height) / 4 ));
+}
+
+#filter-list.open-menu li:nth-child(3) {
+  transform: translateZ(0) translateY(calc( var(--screen-height) / 4 * 2 ));
+}
+
+#filter-list.open-menu li:nth-child(4) {
+  transform: translateZ(0) translateY(calc( var(--screen-height) / 4 * 3 ));
+}
+
+#filter-list:not(.open-menu) li.selected {
+  z-index: 6;
+}
+
+#filter-list li span {
+  font-size: 25px;
+  margin: auto;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 68px;
+  line-height: 68px;
+  will-change: position, margin;
+}

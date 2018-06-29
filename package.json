@@ -1,0 +1,22 @@
+{
+  "name": "Sweet-GOT",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "micro": "^9.3.2",
+    "react-perf-devtool": "^3.0.7",
+    "react-scripts": "1.1.4"
+  },
+  "dependencies": {
+    "ramda": "^0.25.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-virtualized": "^9.19.1"
+  },
+  "scripts": {
+    "start": "PORT=3005 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
