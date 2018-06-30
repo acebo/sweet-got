@@ -5,10 +5,9 @@ const CardList = ({ items, onToggleCard, onDeleteItem, selectedCardId }) => (
   <div id={"card-list-container"}>
     <ul id={"card-list"}>
       {
-        items
-        .map((item, index) => <CardItem
+        items.map(item => <CardItem
           {...item}
-          key={index}
+          key={`${item.Id}-${item.Name}`}
           onToggleCard={onToggleCard}
           onDeleteItem={onDeleteItem}
           isOpenMenuCard={selectedCardId === item.Id}
