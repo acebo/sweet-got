@@ -1,12 +1,8 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import ProfileImage from './ProfileImage'
 import ProfileDetail from './ProfileDetail'
 
-class CardItem extends Component {
-  shouldComponentUpdate(nextProps) {
-    return this.props.isOpenMenuCard !== nextProps.isOpenMenuCard
-  }
-
+class CardItem extends PureComponent {
   render() {
     const { style, isOpenMenuCard, onToggleCard, onDeleteItem, ...item } = this.props
     return (
